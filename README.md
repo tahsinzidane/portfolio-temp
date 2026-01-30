@@ -10,7 +10,6 @@
 
 A beautiful, interactive Windows PowerShell-inspired terminal interface for showcasing your portfolio and developer information in a unique, geek-friendly way.
 
-[Features](#features) • [Demo](#demo) • [Installation](#installation) • [Usage](#usage) • [Customization](#customization) • [Contributing](#contributing)
 
 </div>
 
