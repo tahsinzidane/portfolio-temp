@@ -1,0 +1,61 @@
+{
+  "whoami": {
+    "username": "tahsinzidane",
+    "name": "Mohammad Tahsin Ahmed",
+    "role": "Full stack Development",
+    "stack": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "os": "Windows 11 (Tiny 11)",
+    "mood": "ships code, breaks things, fixes later"
+  },
+  "pwd": "/home/tahsin/jeshore/khulna/bangladesh",
+  "ls": {
+    "projects": [
+      "emoji-verse",
+      "portfolio-temp",
+      "MemoryCardGame",
+      "weofetch",
+      "show-file-tree",
+      "tabNap",
+      "cold_zone_snake"
+    ]
+  },
+  "cat portfolio.txt": {
+    "website": "https://tahsinzidane.github.io/",
+    "github": "https://github.com/tahsinzidane",
+    "medium": "https://medium.com/@tahsinzidane",
+    "instagram": "https://instagram.com/tahsinzidane",
+    "bsky": "https://bsky.app/profile/tahsin-zidane.bsky.social",
+    "linkedin": "https://www.linkedin.com/in/tahsin-zidane-0577852a7/"
+  },
+  "git status": {
+    "current_branch": "main",
+    "status": "ahead of life by 2 commits",
+    "uncommitted_changes": true
+  },
+  "npm list -g": [
+    "node",
+    "npm",
+    "weofetch",
+    "yarn",
+    "syswaifu"
+  ],
+  "history": [
+    "built emoji picker because system ones sucked",
+    "built a bouncing ball demo because reading physics felt less fun",
+    "built a terminal shooting game because CLI apps deserve chaos too",
+    "built a messenger bot because typing the same replies over and over is pain"
+  ],
+  "echo $GOAL": "build tools people actually use",
+  "top": {
+    "cpu": "coding + overthinking",
+    "memory": "occupied by unfinished ideas"
+  },
+  "uptime": "coding since class 10, still not done",
+  "exit": "logout successful, motivation remains questionable"
+}

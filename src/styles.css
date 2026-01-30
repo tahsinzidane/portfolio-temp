@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    overflow: hidden;
+}
+
+.container {
+    background-image: url("https://ik.imagekit.io/weqpr6tob/MY%20IMGS/wallpaper.jpg?updatedAt=1769706598518");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.terminal-window {
+    height: 65vh;
+    width: 58vw;
+    min-width: 600px;
+    min-height: 400px;
+    background-color: #012456;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.terminal-window.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.terminal-window.maximized {
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+}
+
+.terminal-window.minimized {
+    height: 35px;
+    width: 300px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.terminal-window.minimized .terminal-body {
+    display: none;
+}
+
+/* Top tab / title bar */
+.terminal-tab {
+    height: 35px;
+    width: 100%;
+    background: linear-gradient(to bottom, #2d2d30 0%, #252526 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid #1e1e1e;
+    user-select: none;
+    cursor: move;
+}
+
+.tab-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-icon {
+    color: #86d9f9;
+    display: flex;
+    align-items: center;
+}
+
+.tab-title {
+    color: #cccccc;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.tab-buttons button {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+    padding: 0;
+}
+
+.tab-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-buttons button.close:hover {
+    background-color: #e81123;
+    color: white;
+}
+
+.tab-buttons button svg {
+    pointer-events: none;
+}
+
+/* Terminal body */
+.terminal-body {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #012456;
+    position: relative;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 14px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+.terminal-content {
+    color: #f0f0f0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+
+.prompt-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.prompt {
+    color: #f0f0f0;
+    white-space: nowrap;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.command-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f0f0f0;
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    font-size: 14px;
+    flex: 1;
+    caret-color: transparent;
+    padding: 0;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: #f0f0f0;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    position: absolute;
+    left: 0;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.output-line {
+    color: #e5e5e5;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.output-line.error {
+    color: #ff6b6b;
+}
+
+.output-line.success {
+    color: #51cf66;
+}
+
+.hint {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInHint 0.5s ease 1s forwards;
+}
+
+@keyframes fadeInHint {
+    to {
+        opacity: 1;
+    }
+}
+
+kbd {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .terminal-window {
+        width: 90vw;
+        height: 70vh;
+        min-width: unset;
+    }
+}

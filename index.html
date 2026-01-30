@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell portfolio</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="terminal-window" id="terminalWindow">
+            <div class="terminal-tab">
+                <div class="tab-left">
+                    <div class="tab-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h11A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-11z" />
+                            <path
+                                d="M3.5 5.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </div>
+                    <span class="tab-title">Windows PowerShell</span>
+                </div>
+                <div class="tab-buttons">
+                    <button class="btn minimize" id="minimizeBtn" title="Minimize">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <rect x="0" y="5" width="12" height="2" />
+                        </svg>
+                    </button>
+                    <button class="btn maximize" id="maximizeBtn" title="Maximize">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <rect x="1" y="1" width="10" height="10" stroke="currentColor" fill="none"
+                                stroke-width="1.5" />
+                        </svg>
+                    </button>
+                    <button class="btn close" id="closeBtn" title="Close">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-content" id="terminalContent">
+                    <div class="prompt-line">
+                        <span class="prompt">PS C:\Users\tahsinzidane\Documents\codes\portfolio-temp&gt;</span>
+                        <input type="text" id="commandInput" class="command-input" autocomplete="off"
+                            spellcheck="false">
+                        <span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hint">Press <kbd>Alt</kbd> + <kbd>T</kbd> to toggle terminal</div>
+    </div>
+
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
