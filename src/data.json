@@ -14,15 +14,42 @@
     "mood": "ships code, breaks things, fixes later"
   },
   "pwd": "/home/tahsin/jeshore/khulna/bangladesh",
-  "ls": {
-    "projects": [
+  "ls":{
+    "projects":[
       "emoji-verse",
       "portfolio-temp",
       "MemoryCardGame",
       "weofetch",
-      "show-file-tree",
       "tabNap",
       "cold_zone_snake"
+    ]
+  },
+  "cd": {
+    "projects": [
+      {
+        "name": "emoji-verse",
+        "url": "https://github.com/tahsinzidane/emoji-verse"
+      },
+      {
+        "name": "portfolio-temp",
+        "url": "https://github.com/tahtahsinzidanesinzidane/powershell-terminal-portfolio"
+      },
+      {
+        "name": "MemoryCardGame",
+        "url": "https://github.com/tahsinzidane/MemoryCardGame"
+      },
+      {
+        "name": "weofetch",
+        "url": "https://github.com/tahsinzidane/weofetch"
+      },
+      {
+        "name": "tabNap",
+        "url": "https://github.com/tahsinzidane/tabNap"
+      },
+      {
+        "name": "cold_zone_snake",
+        "url": "https://github.com/tahsinzidane/cold_zone_snake"
+      }
     ]
   },
   "cat portfolio.txt": {

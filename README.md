@@ -14,6 +14,8 @@ A beautiful, interactive Windows PowerShell-inspired terminal interface for show
 
 </div>
 
+<img src="./src/assets/preview.png">
+
 ---
 
 ## 🎯 Features

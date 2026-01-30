@@ -13,7 +13,8 @@ async function loadTerminalData() {
             throw new Error('Failed to fetch terminal data');
         }
         terminalData = await response.json();
-        console.log('Terminal data loaded successfully:', terminalData);
+        //uncomment when needed
+        // console.log('Terminal data loaded successfully:', terminalData);
     } catch (error) {
         console.error('Error loading terminal data:', error);
         // Fallback data
@@ -64,6 +65,35 @@ function processCommand(command) {
     if (cmd === 'time') {
         return new Date().toLocaleTimeString();
     }
+    // Besic calculation
+    if (/^[0-9+\-*/().\s]+$/.test(cmd)) {
+        try {
+            const result = eval(cmd);
+            return result
+        } catch (error) {
+            return 'Error: Invalid math expression';
+        }
+    }
+
+    // Check for "cd" command
+    // send to the link in cd command 
+    if (cmd.startsWith('cd ')) {
+        const target = cmd.split(' ')[1];
+
+        const project = terminalData.cd.projects.find(p => p.name === target);
+
+        if (project) {
+            // Open the URL in a new tab
+            window.open(project.url, '_blank');
+            return `Redirecting to ${target}...`;
+        } else {
+            return `Directory not found: ${target}`;
+        }
+    }
+
+
+
+
     if (cmd === 'help') {
         return `
                 Available commands:
@@ -81,12 +111,14 @@ function processCommand(command) {
                 ls                  show all projects
                 cat portfolio.txt   socail links
                 git status          my current status
-                npm list -g          checked global npm packages because something was definitely broken
+                npm list -g         checked global npm packages because something was definitely broken
                 history             show my past
+                cd                  visit project repo
                 <some extra commands>
                 top
                 uptime
                 exit
+                besic calculation
 
                 `.trim();
     }
@@ -376,5 +408,6 @@ window.addEventListener('load', async () => {
     commandInput.focus();
     updateCursor();
 
-    console.log('Terminal initialized successfully');
+    // uncomment when needed
+    // console.log('Terminal initialized successfully');
 });
